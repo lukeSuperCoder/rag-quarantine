@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+.env
+data/
+milvus_quarantine.db/
+milvus_quarantine_demo.db/
+__pycache__/
+*.py[cod]
+.claude/
