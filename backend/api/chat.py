@@ -24,6 +24,25 @@ def list_sessions():
     return ok({"items": StorageService().list_sessions()})
 
 
+@chat_bp.put("/sessions/<session_id>")
+def update_session(session_id: str):
+    payload = request.get_json(silent=True) or {}
+    title = (payload.get("title") or "").strip()
+    if not title:
+        return fail(4001, "标题不能为空")
+    session = StorageService().update_session(session_id, title)
+    if not session:
+        return fail(4003, "会话不存在", status=404)
+    return ok(session)
+
+
+@chat_bp.delete("/sessions/<session_id>")
+def delete_session(session_id: str):
+    if not StorageService().delete_session(session_id):
+        return fail(4003, "会话不存在", status=404)
+    return ok({"deleted": True})
+
+
 @chat_bp.get("/sessions/<session_id>/messages")
 def list_messages(session_id: str):
     storage = StorageService()

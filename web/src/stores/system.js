@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { apiMode, getHealth } from '../api/client'
+import { getHealth } from '../api/client'
 
 export const useSystemStore = defineStore('system', {
   state: () => ({
@@ -11,7 +11,7 @@ export const useSystemStore = defineStore('system', {
       this.healthStatus = 'checking'
       try {
         this.health = await getHealth()
-        this.healthStatus = apiMode() === 'mock' ? 'mock' : 'ok'
+        this.healthStatus = 'ok'
       } catch (error) {
         this.healthStatus = 'down'
       }

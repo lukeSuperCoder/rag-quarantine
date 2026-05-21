@@ -6,16 +6,32 @@
         <el-button type="primary" size="small" :icon="Plus" @click="chatStore.newSession">新建</el-button>
       </div>
       <div class="session-list">
-        <button
+        <div
           v-for="session in chatStore.sessions"
           :key="session.id"
           class="session-item"
           :class="{ active: session.id === chatStore.activeSessionId }"
           @click="chatStore.selectSession(session.id)"
         >
-          <span>{{ session.title }}</span>
-          <small>{{ formatTime(session.updated_at) }}</small>
-        </button>
+          <template v-if="renamingId === session.id">
+            <input
+              ref="renameInput"
+              v-model="renameTitle"
+              class="rename-input"
+              @keydown.enter.prevent="confirmRename(session.id)"
+              @keydown.escape.prevent="cancelRename"
+              @blur="confirmRename(session.id)"
+            />
+          </template>
+          <template v-else>
+            <span class="session-title">{{ session.title }}</span>
+            <small>{{ formatTime(session.updated_at) }}</small>
+          </template>
+          <div class="session-actions" @click.stop>
+            <el-icon class="action-btn" @click="startRename(session)"><Edit /></el-icon>
+            <el-icon class="action-btn" @click="handleDelete(session)"><Delete /></el-icon>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -55,20 +71,20 @@
 
     <aside class="source-pane">
       <div class="pane-header">
-        <span>本轮引用</span>
-        <el-tag size="small">{{ chatStore.sources.length }}</el-tag>
+        <span>参考资料</span>
+        <el-tag size="small" type="info">{{ chatStore.sources.length }}</el-tag>
       </div>
       <div class="source-list">
         <el-empty v-if="!chatStore.sources.length" description="回答产生后显示引用来源" />
-        <div v-for="source in chatStore.sources" :key="source.chunk_id" class="source-item">
+        <div v-for="source in chatStore.sources" :key="source.chunk_id" class="source-item" @click="previewSource = source">
           <div class="source-title">{{ source.doc_name }}</div>
-          <div class="source-meta">
-            {{ source.section_title || '未分章节' }} · chunk {{ source.chunk_index }}
-          </div>
-          <p>{{ source.text }}</p>
-          <el-tag v-if="source.score" size="small" type="info">score {{ source.score }}</el-tag>
+          <div class="source-text">{{ source.text }}</div>
         </div>
       </div>
+
+      <el-dialog v-model="sourceDialogVisible" :title="previewSource?.doc_name" width="640px" append-to-body>
+        <div class="source-dialog-body">{{ previewSource?.text }}</div>
+      </el-dialog>
     </aside>
   </div>
 </template>
@@ -77,9 +93,9 @@
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
-import { nextTick, onMounted, ref, watch } from 'vue'
-import { Plus, Promotion } from '@element-plus/icons-vue'
-import { ElMessage } from 'element-plus'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { Plus, Promotion, Edit, Delete } from '@element-plus/icons-vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { useChatStore } from '../stores/chat'
 import { useSettingsStore } from '../stores/settings'
 
@@ -97,6 +113,38 @@ const chatStore = useChatStore()
 const settings = useSettingsStore()
 const question = ref('')
 const messageScroller = ref(null)
+const previewSource = ref(null)
+const sourceDialogVisible = computed({
+  get: () => !!previewSource.value,
+  set: (v) => { if (!v) previewSource.value = null }
+})
+
+const renamingId = ref('')
+const renameTitle = ref('')
+
+function startRename(session) {
+  renamingId.value = session.id
+  renameTitle.value = session.title
+}
+
+async function confirmRename(sessionId) {
+  const title = renameTitle.value.trim()
+  if (!title || !renamingId.value) return cancelRename()
+  renamingId.value = ''
+  await chatStore.rename(sessionId, title)
+}
+
+function cancelRename() {
+  renamingId.value = ''
+  renameTitle.value = ''
+}
+
+async function handleDelete(session) {
+  try {
+    await ElMessageBox.confirm(`确定删除「${session.title}」？`, '删除会话', { type: 'warning' })
+    await chatStore.remove(session.id)
+  } catch { /* cancelled */ }
+}
 
 const renderMarkdown = (content) => md.render(content)
 
@@ -171,6 +219,7 @@ onMounted(() => chatStore.bootstrap())
 
 .session-item {
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -189,16 +238,60 @@ onMounted(() => chatStore.bootstrap())
   border-left-color: var(--accent);
 }
 
-.session-item span {
+.session-item:hover .session-actions {
+  opacity: 1;
+}
+
+.session-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 14px;
   font-weight: 600;
+  padding-right: 48px;
 }
 
 .session-item small {
   color: var(--text-secondary);
+}
+
+.session-actions {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.action-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.action-btn:hover {
+  background: #e4e7ed;
+  color: var(--text-main);
+}
+
+.rename-input {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
 }
 
 .chat-workspace {
@@ -288,26 +381,41 @@ onMounted(() => chatStore.bootstrap())
 .source-item {
   padding: 12px;
   border-bottom: 1px solid var(--panel-border);
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.source-item:hover {
+  background: #f5f7fa;
 }
 
 .source-title {
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.source-meta {
-  margin-top: 4px;
-  color: var(--text-secondary);
-  font-size: 13px;
-}
-
-.source-item p {
-  max-height: 72px;
-  overflow: hidden;
-  margin: 8px 0;
+  font-weight: 600;
+  font-size: 14px;
   color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-text {
+  margin-top: 6px;
   font-size: 13px;
+  color: var(--text-secondary);
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.source-dialog-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: var(--text-main);
 }
 
 @media (max-width: 1100px) {

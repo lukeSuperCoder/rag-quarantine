@@ -39,14 +39,12 @@ const navItems = [
 
 const healthText = computed(() => {
   if (systemStore.healthStatus === 'ok') return '后端可用'
-  if (systemStore.healthStatus === 'mock') return 'Mock 联调'
   if (systemStore.healthStatus === 'checking') return '检查中'
   return '未连接'
 })
 
 const healthTagType = computed(() => {
   if (systemStore.healthStatus === 'ok') return 'success'
-  if (systemStore.healthStatus === 'mock') return 'warning'
   if (systemStore.healthStatus === 'checking') return 'info'
   return 'danger'
 })

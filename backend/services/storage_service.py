@@ -208,6 +208,18 @@ class StorageService:
             conn.execute(f"UPDATE chunks SET {assignments} WHERE id = ?", [*updates.values(), chunk_id])
         return self.get_chunk(chunk_id)
 
+    def update_session(self, session_id: str, title: str) -> dict | None:
+        ts = now_iso()
+        with self._connect() as conn:
+            conn.execute("UPDATE chat_sessions SET title = ?, updated_at = ? WHERE id = ?", (title, ts, session_id))
+        return self.get_session(session_id)
+
+    def delete_session(self, session_id: str) -> bool:
+        with self._connect() as conn:
+            conn.execute("DELETE FROM chat_messages WHERE session_id = ?", (session_id,))
+            cur = conn.execute("DELETE FROM chat_sessions WHERE id = ?", (session_id,))
+            return cur.rowcount > 0
+
     def create_session(self, title: str) -> dict:
         session_id = new_id("sess")
         ts = now_iso()

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ElMessage } from 'element-plus'
-import { createSession, listMessages, listSessions, sendChatStream } from '../api/client'
+import { createSession, deleteSession, listMessages, listSessions, renameSession, sendChatStream } from '../api/client'
 
 export const useChatStore = defineStore('chat', {
   state: () => ({
@@ -20,7 +20,7 @@ export const useChatStore = defineStore('chat', {
     async bootstrap() {
       this.sessions = await listSessions()
       if (!this.sessions.length) {
-        const session = await createSession('新的宠物检疫咨询')
+        const session = await createSession('新的对话')
         this.sessions = [session]
       }
       await this.selectSession(this.sessions[0].id)
@@ -33,9 +33,27 @@ export const useChatStore = defineStore('chat', {
       this.retrievalStatus = ''
     },
     async newSession() {
-      const session = await createSession('新的宠物检疫咨询')
+      const session = await createSession('新的对话')
       this.sessions.unshift(session)
       await this.selectSession(session.id)
+    },
+    async rename(sessionId, title) {
+      const updated = await renameSession(sessionId, title)
+      const index = this.sessions.findIndex((s) => s.id === sessionId)
+      if (index >= 0) this.sessions[index] = updated
+    },
+    async remove(sessionId) {
+      await deleteSession(sessionId)
+      this.sessions = this.sessions.filter((s) => s.id !== sessionId)
+      if (this.activeSessionId === sessionId) {
+        if (this.sessions.length) {
+          await this.selectSession(this.sessions[0].id)
+        } else {
+          this.activeSessionId = ''
+          this.messages = []
+          this.sources = []
+        }
+      }
     },
     async send(question, settings) {
       if (!this.activeSessionId || this.loading) return
