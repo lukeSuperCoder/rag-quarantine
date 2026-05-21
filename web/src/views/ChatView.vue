@@ -41,13 +41,16 @@
           <strong>{{ chatStore.activeSession?.title || '对话问答' }}</strong>
           <span class="muted">{{ chatStore.retrievalStatus || '等待提问' }}</span>
         </div>
-        <el-switch v-model="settings.form.rerank" active-text="rerank" @change="persistSettings" />
+        <el-switch v-model="settings.form.rerank" active-text="专家模式" @change="persistSettings" />
       </div>
 
       <div ref="messageScroller" class="message-list">
         <el-empty v-if="!chatStore.messages.length" description="输入问题后开始检索宠物检疫政策知识库" />
         <article v-for="message in chatStore.messages" :key="message.id" class="message" :class="message.role">
-          <div class="message-role">{{ message.role === 'user' ? '用户' : '助手' }}</div>
+          <div class="message-avatar" :class="message.role">
+            <svg v-if="message.role === 'user'" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M823.04 970.24a44.992 44.992 0 0 1-45.824-45.824v-131.328c0-102.4-44.288-145.152-145.088-145.152H364.8c-102.4 0-145.152 44.288-145.152 145.152v131.328c0 25.984-19.84 45.824-45.824 45.824A44.992 44.992 0 0 1 128 924.48v-131.328c0-152.768 84.032-236.8 236.8-236.8h267.328c152.704 0 236.8 84.032 236.8 236.8v131.328c0 24.448-19.904 45.824-45.888 45.824zM497.664 518.08a232.064 232.064 0 0 1-232.192-232.192A232.064 232.064 0 0 1 497.664 53.76a232.064 232.064 0 0 1 232.192 232.192 232.064 232.064 0 0 1-232.192 232.192z m0-372.672A140.16 140.16 0 0 0 357.12 285.888a140.16 140.16 0 0 0 140.544 140.544 140.16 140.16 0 0 0 140.544-140.544 140.16 140.16 0 0 0-140.544-140.48z" fill="currentColor"/></svg>
+            <svg v-else viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786 24.514-4.086 47.7 12.476 51.786 36.99l20 120c0.246 1.472 0.416 2.94 0.516 4.398h228.192c0.1-1.46 0.27-2.926 0.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99 24.514 4.086 41.076 27.272 36.99 51.786L717.12 274zM308 484v40c0 24.852 20.148 45 45 45S398 548.852 398 524v-40c0-24.852-20.148-45-45-45S308 459.148 308 484z m318 0v40c0 24.852 20.148 45 45 45S716 548.852 716 524v-40c0-24.852-20.148-45-45-45S626 459.148 626 484zM312 912c-24.852 0-45-20.148-45-45S287.148 822 312 822h400c24.852 0 45 20.148 45 45S736.852 912 712 912H312z" fill="currentColor"/></svg>
+          </div>
           <div v-if="message.role === 'assistant'" class="message-content markdown-body" v-html="renderMarkdown(message.content || '正在生成回答...')" />
           <div v-else class="message-content">{{ message.content }}</div>
         </article>
@@ -181,39 +184,46 @@ onMounted(() => chatStore.bootstrap())
 <style scoped>
 .chat-page {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr) 320px;
+  grid-template-columns: 260px minmax(0, 1fr) 340px;
   min-height: 0;
-  background: var(--content-bg);
+  background: transparent;
 }
 
 .session-pane,
 .source-pane {
   min-width: 0;
   min-height: 0;
-  background: #fff;
-  border-right: 1px solid var(--panel-border);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   overflow: hidden;
+}
+
+.session-pane {
+  border-right: 1px solid var(--border-light);
 }
 
 .source-pane {
   border-right: 0;
-  border-left: 1px solid var(--panel-border);
+  border-left: 1px solid var(--border-light);
 }
 
 .pane-header {
-  height: 48px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
+  padding: 0 18px;
+  font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
   font-size: 15px;
-  font-weight: 700;
-  border-bottom: 1px solid var(--panel-border);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
 }
 
 .session-list,
 .source-list {
-  height: calc(100vh - var(--header-height) - 48px);
+  height: calc(100vh - var(--header-height) - 56px);
   overflow: auto;
 }
 
@@ -222,20 +232,24 @@ onMounted(() => chatStore.bootstrap())
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 12px 14px;
+  gap: 5px;
+  padding: 13px 18px;
   text-align: left;
-  color: var(--text-main);
+  color: var(--text-primary);
   background: transparent;
   border: 0;
   border-left: 3px solid transparent;
   cursor: pointer;
+  transition: all var(--transition-base);
 }
 
-.session-item:hover,
+.session-item:hover {
+  background: rgba(13, 148, 136, 0.04);
+}
+
 .session-item.active {
-  background: #f0f6ff;
-  border-left-color: var(--accent);
+  background: rgba(13, 148, 136, 0.08);
+  border-left-color: var(--primary);
 }
 
 .session-item:hover .session-actions {
@@ -248,57 +262,60 @@ onMounted(() => chatStore.bootstrap())
   white-space: nowrap;
   font-size: 14px;
   font-weight: 600;
-  padding-right: 48px;
+  padding-right: 52px;
 }
 
 .session-item small {
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
+  font-size: 12px;
 }
 
 .session-actions {
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 10px;
   transform: translateY(-50%);
   display: flex;
   gap: 4px;
   opacity: 0;
-  transition: opacity .15s;
+  transition: opacity var(--transition-fast);
 }
 
 .action-btn {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  color: var(--text-secondary);
+  border-radius: var(--radius-xs);
+  color: var(--text-tertiary);
   cursor: pointer;
   font-size: 14px;
+  transition: all var(--transition-fast);
 }
 
 .action-btn:hover {
-  background: #e4e7ed;
-  color: var(--text-main);
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary);
 }
 
 .rename-input {
   width: 100%;
   font-size: 14px;
   font-weight: 600;
-  padding: 2px 6px;
-  border: 1px solid var(--accent);
-  border-radius: 4px;
+  padding: 4px 8px;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-xs);
   outline: none;
-  background: #fff;
+  background: var(--bg-overlay);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08);
 }
 
 .chat-workspace {
   min-width: 0;
   min-height: 0;
   display: grid;
-  grid-template-rows: 48px minmax(0, 1fr) 128px;
+  grid-template-rows: 56px minmax(0, 1fr) 140px;
   height: 100%;
 }
 
@@ -306,103 +323,124 @@ onMounted(() => chatStore.bootstrap())
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--panel-border);
-  background: #fff;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .chat-status > div {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+}
+
+.chat-status strong {
+  font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  font-size: 15px;
 }
 
 .message-list {
   min-height: 0;
   overflow: auto;
-  padding: 16px 18px;
+  padding: 24px 20px;
 }
 
 .message {
-  max-width: 880px;
+  max-width: 860px;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 10px;
-  margin-bottom: 14px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .message.user {
   margin-left: auto;
 }
 
-.message-role {
-  width: 44px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
+.message-avatar {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-700);
+  border-radius: 50%;
   color: #fff;
-  background: #607d9f;
-  border-radius: 4px;
-  font-size: 13px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-.message.user .message-role {
-  background: var(--accent);
+.message-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.message.user .message-avatar {
+  background: var(--primary);
 }
 
 .message-content {
   min-width: 0;
-  padding: 10px 12px;
-  border: 1px solid var(--panel-border);
-  border-radius: 6px;
-  background: #fff;
+  padding: 14px 18px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-overlay);
   font-size: 14px;
+  line-height: 1.7;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--transition-fast);
 }
 
 .message.user .message-content {
   color: #fff;
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  box-shadow: 0 3px 14px rgba(13, 148, 136, 0.2);
 }
 
 .chat-input {
-  padding: 12px 16px;
-  border-top: 1px solid var(--panel-border);
-  background: #fff;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .input-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .source-item {
-  padding: 12px;
-  border-bottom: 1px solid var(--panel-border);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
   cursor: pointer;
-  transition: background .15s;
+  transition: all var(--transition-base);
 }
 
 .source-item:hover {
-  background: #f5f7fa;
+  background: rgba(13, 148, 136, 0.04);
 }
 
 .source-title {
   font-weight: 600;
   font-size: 14px;
-  color: var(--text-main);
+  color: var(--text-primary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .source-text {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -413,9 +451,10 @@ onMounted(() => chatStore.bootstrap())
   max-height: 60vh;
   overflow-y: auto;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
   white-space: pre-wrap;
-  color: var(--text-main);
+  color: var(--text-primary);
+  padding: 8px 0;
 }
 
 @media (max-width: 1100px) {
@@ -436,7 +475,7 @@ onMounted(() => chatStore.bootstrap())
 
   .session-pane {
     border-right: 0;
-    border-bottom: 1px solid var(--panel-border);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .session-list {
@@ -453,11 +492,11 @@ onMounted(() => chatStore.bootstrap())
   }
 
   .message {
-    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-columns: 36px minmax(0, 1fr);
   }
 
   .message-list {
-    padding: 12px;
+    padding: 14px;
   }
 }
 </style>

@@ -75,7 +75,7 @@ onMounted(store.search)
 .knowledge-page {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 
 .toolbar .el-input:first-child {
@@ -104,42 +104,46 @@ onMounted(store.search)
 
 .chunk-row {
   width: 100%;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-align: left;
-  background: #fff;
+  background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--panel-border);
+  border-bottom: 1px solid var(--border-subtle);
   cursor: pointer;
+  transition: all var(--transition-base);
 }
 
 .chunk-row:hover {
-  background: #f5f9ff;
+  background: rgba(13, 148, 136, 0.04);
 }
 
 .chunk-title {
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 .chunk-meta {
-  margin-top: 4px;
-  color: var(--text-secondary);
-  font-size: 13px;
+  margin-top: 5px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  letter-spacing: 0.3px;
 }
 
 .chunk-row p {
-  margin: 8px 0 0;
-  color: var(--text-main);
+  margin: 10px 0 0;
+  color: var(--text-secondary);
   line-height: 1.7;
+  font-size: 13px;
 }
 
 .chunk-editor {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .drawer-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 10px;
+  margin-top: 16px;
 }
 </style>

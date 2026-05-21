@@ -119,7 +119,7 @@ onBeforeUnmount(store.stopPolling)
 .document-page {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 
 .toolbar .el-input {
@@ -133,18 +133,23 @@ onBeforeUnmount(store.stopPolling)
 .table-panel {
   min-height: 0;
   overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.table-panel :deep(.el-table__row) {
+  transition: background var(--transition-fast);
 }
 
 .detail-preview {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .detail-preview p {
-  padding: 12px;
+  padding: 14px 18px;
   color: var(--text-secondary);
-  line-height: 1.7;
-  background: #f7f9fc;
-  border: 1px solid var(--panel-border);
-  border-radius: 6px;
+  line-height: 1.75;
+  background: var(--primary-lightest);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
 }
 </style>

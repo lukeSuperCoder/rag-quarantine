@@ -52,19 +52,27 @@ function reset() {
 .settings-page {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .settings-panel {
-  width: min(720px, 100%);
+  width: min(680px, 100%);
+  box-shadow: var(--shadow-md);
 }
 
 .settings-form {
-  padding: 18px 20px 8px;
+  padding: 24px 28px 16px;
 }
 
 .form-help {
-  margin-left: 12px;
-  color: var(--text-secondary);
-  font-size: 13px;
+  margin-left: 14px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.settings-form :deep(.el-form-item__label) {
+  font-weight: 500;
+  color: var(--text-primary);
 }
 </style>
