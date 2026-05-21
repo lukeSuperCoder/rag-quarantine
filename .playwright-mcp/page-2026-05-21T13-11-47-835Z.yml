@@ -1,0 +1,110 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: 宠物检疫政策智能问答
+    - generic [ref=e6]:
+      - generic [ref=e8]: 后端可用
+      - button "健康检查" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - generic [ref=e13]: 健康检查
+  - generic [ref=e14]:
+    - complementary:
+      - link [ref=e15] [cursor=pointer]:
+        - /url: /chat
+        - img [ref=e17]
+      - link [ref=e20] [cursor=pointer]:
+        - /url: /documents
+        - img [ref=e22]
+      - link [ref=e24] [cursor=pointer]:
+        - /url: /knowledge
+        - img [ref=e26]
+      - link [ref=e29] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e31]
+    - main [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: 会话
+            - button "新建" [ref=e38] [cursor=pointer]:
+              - img [ref=e40]
+              - generic [ref=e42]: 新建
+          - generic [ref=e43]:
+            - button "新的宠物检疫咨询 21:07" [ref=e44] [cursor=pointer]:
+              - generic [ref=e45]: 新的宠物检疫咨询
+              - generic [ref=e46]: 21:07
+            - button "新的宠物检疫咨询 21:02" [ref=e47] [cursor=pointer]:
+              - generic [ref=e48]: 新的宠物检疫咨询
+              - generic [ref=e49]: 21:02
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - strong [ref=e53]: 新的宠物检疫咨询
+              - generic [ref=e54]: 等待提问
+            - generic [ref=e55]:
+              - switch
+              - generic [ref=e59] [cursor=pointer]: rerank
+          - generic [ref=e60]:
+            - article [ref=e61]:
+              - generic [ref=e62]: 用户
+              - generic [ref=e63]: 宠物入境中国需要隔离多久？
+            - article [ref=e64]:
+              - generic [ref=e65]: 助手
+              - generic [ref=e66]:
+                - paragraph [ref=e67]:
+                  - text: 宠物入境中国若需隔离检疫，隔离时间为
+                  - strong [ref=e68]: 30天
+                  - text: （截留期限计入在内）。
+                - paragraph [ref=e69]:
+                  - strong [ref=e70]: 政策依据：
+                  - text: 《海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）》第二条规定：“携带入境的宠物应在海关指定的隔离场隔离检疫30天（截留期限计入在内）。”以及《中华人民共和国携带入境宠物检疫要求》一、总体要求（五）规定：“需实施隔离检疫的宠物须从建设有隔离检疫设施的口岸入境，并在海关指定的隔离检疫场隔离检疫30天。”
+                - paragraph [ref=e71]:
+                  - emphasis [ref=e72]: 注：来自指定国家或地区且具有有效电子芯片经现场检疫合格、来自非指定国家或地区提供符合要求的狂犬病抗体检测报告并经现场检疫合格，或属于导盲犬、导听犬、搜救犬且提供相应证明经现场检疫合格的宠物，可免于隔离检疫。
+            - article [ref=e73]:
+              - generic [ref=e74]: 用户
+              - generic [ref=e75]: 那需要准备哪些材料？
+            - article [ref=e76]:
+              - generic [ref=e77]: 助手
+              - generic [ref=e78]:
+                - paragraph [ref=e79]: 携带宠物入境中国需要准备以下材料：
+                - paragraph [ref=e80]:
+                  - strong [ref=e81]: 一、所有宠物必须提供的基础材料：
+                - list [ref=e82]:
+                  - listitem [ref=e83]:
+                    - strong [ref=e84]: 有效检疫证书
+                    - text: ：输出国家或者地区官方动物检疫机构出具。
+                  - listitem [ref=e85]:
+                    - strong [ref=e86]: 狂犬病疫苗接种证书
+                    - text: 。
+                  - listitem [ref=e87]:
+                    - strong [ref=e88]: 有效电子芯片
+                    - text: ：须符合国际标准ISO 11784和11785（15位微芯片代码只包含数字）。
+                  - listitem [ref=e89]:
+                    - strong [ref=e90]: 信息登记表
+                    - text: ：携带人在现场需填写《携带入境宠物（犬、猫）信息登记表》。
+                - paragraph [ref=e91]:
+                  - strong [ref=e92]: 二、特定情况需额外提供的材料：
+                - list [ref=e93]:
+                  - listitem [ref=e94]:
+                    - strong [ref=e95]: 来自非指定国家或地区的宠物
+                    - text: （若申请免隔离）：需提供采信实验室出具的
+                    - strong [ref=e96]: 狂犬病抗体检测报告
+                    - text: （抗体滴度或免疫抗体量须在0.5IU/ml以上）。
+                  - listitem [ref=e97]:
+                    - strong [ref=e98]: 导盲犬、导听犬、搜救犬
+                    - text: ：需提供相应的
+                    - strong [ref=e99]: 使用者证明
+                    - text: 和
+                    - strong [ref=e100]: 专业训练证明
+                    - text: 。
+                - paragraph [ref=e101]:
+                  - strong [ref=e102]: 政策依据：
+                - list [ref=e103]:
+                  - listitem [ref=e104]: 《海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）》第一条、第二条。
+                  - listitem [ref=e105]: 《中华人民共和国携带入境宠物检疫要求》一、总体要求（七）；二、来自于指定国家或地区的宠物（五）。
+          - generic [ref=e106]:
+            - textbox "请输入宠物入境、出境、疫苗、隔离、口岸等检疫政策问题" [ref=e108]
+            - generic [ref=e109]:
+              - generic [ref=e110]: Enter 发送，Shift+Enter 换行
+              - button "发送" [ref=e111] [cursor=pointer]:
+                - img [ref=e113]
+                - generic [ref=e115]: 发送

@@ -7,3 +7,6 @@ milvus_quarantine_demo.db/
 __pycache__/
 *.py[cod]
 .claude/
+web/node_modules/
+web/dist/
+web/ui-check-*.png

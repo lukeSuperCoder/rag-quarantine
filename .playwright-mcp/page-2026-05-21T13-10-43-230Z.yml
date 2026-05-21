@@ -1,0 +1,78 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: 宠物检疫政策智能问答
+    - generic [ref=e6]:
+      - generic [ref=e8]: 后端可用
+      - button "健康检查" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - generic [ref=e13]: 健康检查
+  - generic [ref=e14]:
+    - complementary [ref=e15]:
+      - link "对话问答" [ref=e16] [cursor=pointer]:
+        - /url: /chat
+        - img [ref=e18]
+        - generic [ref=e21]: 对话问答
+      - link "文档管理" [ref=e22] [cursor=pointer]:
+        - /url: /documents
+        - img [ref=e24]
+        - generic [ref=e26]: 文档管理
+      - link "知识库查询" [ref=e27] [cursor=pointer]:
+        - /url: /knowledge
+        - img [ref=e29]
+        - generic [ref=e32]: 知识库查询
+      - link "问答设置" [ref=e33] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e35]
+        - generic [ref=e37]: 问答设置
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e42]:
+            - img [ref=e45]
+            - textbox "输入关键词，如：隔离、狂犬病、口岸" [ref=e47]
+          - textbox "国家/地区" [ref=e51]
+          - generic [ref=e54] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e56]
+              - generic [ref=e57]: 文档类型
+            - img [ref=e60]
+          - button "搜索" [ref=e62] [cursor=pointer]:
+            - img [ref=e155]
+            - generic [ref=e66]: 搜索
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: 知识片段
+              - generic [ref=e72]: "2"
+            - generic [ref=e73]:
+              - button "中华人民共和国携带宠物入境检疫要求 中国 · 隔离检疫 · chunk 3 携带入境的犬、猫应当接受海关现场检疫。来自非指定国家或地区、不能提供有效狂犬病抗体检测报告等情形的宠物，应进入隔离场进行隔离检疫。" [ref=e146] [cursor=pointer]:
+                - generic [ref=e147]: 中华人民共和国携带宠物入境检疫要求
+                - generic [ref=e148]: 中国 · 隔离检疫 · chunk 3
+                - paragraph [ref=e149]: 携带入境的犬、猫应当接受海关现场检疫。来自非指定国家或地区、不能提供有效狂犬病抗体检测报告等情形的宠物，应进入隔离场进行隔离检疫。
+              - button "具备进境宠物隔离检疫条件的口岸名单 中国 · 口岸名单 · chunk 1 部分指定口岸具备进境宠物隔离检疫条件，旅客应结合入境城市、宠物材料完整性和海关现场审核要求办理。" [ref=e150] [cursor=pointer]:
+                - generic [ref=e151]: 具备进境宠物隔离检疫条件的口岸名单
+                - generic [ref=e152]: 中国 · 口岸名单 · chunk 1
+                - paragraph [ref=e153]: 部分指定口岸具备进境宠物隔离检疫条件，旅客应结合入境城市、宠物材料完整性和海关现场审核要求办理。
+          - dialog "片段详情" [ref=e158]:
+            - generic [ref=e159]:
+              - heading "片段详情" [level=2] [ref=e160]
+              - button "Close this dialog" [ref=e161] [cursor=pointer]:
+                - img [ref=e163]
+            - generic [ref=e165]:
+              - table [ref=e168]:
+                - rowgroup [ref=e169]:
+                  - row "来源文档 中华人民共和国携带宠物入境检疫要求" [ref=e170]:
+                    - cell "来源文档" [ref=e171]
+                    - cell "中华人民共和国携带宠物入境检疫要求" [ref=e172]
+                  - row "章节 隔离检疫" [ref=e173]:
+                    - cell "章节" [ref=e174]
+                    - cell "隔离检疫" [ref=e175]
+                  - row "Chunk 3" [ref=e176]:
+                    - cell "Chunk" [ref=e177]
+                    - cell "3" [ref=e178]
+              - textbox [ref=e180]: 携带入境的犬、猫应当接受海关现场检疫。来自非指定国家或地区、不能提供有效狂犬病抗体检测报告等情形的宠物，应进入隔离场进行隔离检疫。
+              - generic [ref=e181]:
+                - button "取消" [ref=e182] [cursor=pointer]:
+                  - generic [ref=e183]: 取消
+                - button "保存并重新 embedding" [ref=e184] [cursor=pointer]:
+                  - generic [ref=e185]: 保存并重新 embedding

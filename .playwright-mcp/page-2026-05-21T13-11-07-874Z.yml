@@ -1,0 +1,71 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: 宠物检疫政策智能问答
+    - generic [ref=e6]:
+      - generic [ref=e8]: 后端可用
+      - button "健康检查" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - generic [ref=e13]: 健康检查
+  - generic [ref=e14]:
+    - complementary [ref=e15]:
+      - link "对话问答" [ref=e16] [cursor=pointer]:
+        - /url: /chat
+        - img [ref=e18]
+        - generic [ref=e21]: 对话问答
+      - link "文档管理" [ref=e22] [cursor=pointer]:
+        - /url: /documents
+        - img [ref=e24]
+        - generic [ref=e26]: 文档管理
+      - link "知识库查询" [ref=e27] [cursor=pointer]:
+        - /url: /knowledge
+        - img [ref=e29]
+        - generic [ref=e32]: 知识库查询
+      - link "问答设置" [ref=e33] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e35]
+        - generic [ref=e37]: 问答设置
+    - main [ref=e38]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: 问答参数
+          - button "恢复默认" [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]: 恢复默认
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]: 引用片段 top_k
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - button "decrease number" [ref=e50] [cursor=pointer]:
+                  - img [ref=e52]
+                - button "increase number" [ref=e54] [cursor=pointer]:
+                  - img [ref=e56]
+                - spinbutton "引用片段 top_k" [ref=e60]: "5"
+              - generic [ref=e61]: 每轮检索返回的候选知识片段数量
+          - generic [ref=e62]:
+            - generic [ref=e63]: 启用重排序
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - switch "启用重排序"
+              - generic [ref=e68]: 发送问答请求时传递 rerank 参数
+          - group "temperature" [ref=e69]:
+            - generic [ref=e70]: temperature
+            - generic [ref=e72]:
+              - slider "slider between 0 and 1.5" [ref=e75] [cursor=pointer]
+              - generic [ref=e77]:
+                - button "decrease number" [ref=e78] [cursor=pointer]:
+                  - img [ref=e80]
+                - button "increase number" [ref=e82] [cursor=pointer]:
+                  - img [ref=e84]
+                - spinbutton [ref=e88]: "0.7"
+          - generic [ref=e89]:
+            - generic [ref=e90]: 最大历史轮数
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - button "decrease number" [ref=e93] [cursor=pointer]:
+                  - img [ref=e95]
+                - button "increase number" [ref=e97] [cursor=pointer]:
+                  - img [ref=e99]
+                - spinbutton "最大历史轮数" [ref=e103]: "20"
+              - generic [ref=e104]: 后端读取会话历史时的上限
+          - button "保存设置" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]: 保存设置

@@ -1,0 +1,380 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: 宠物检疫政策智能问答
+    - generic [ref=e6]:
+      - generic [ref=e8]: 后端可用
+      - button "健康检查" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - generic [ref=e13]: 健康检查
+  - generic [ref=e14]:
+    - complementary [ref=e15]:
+      - link "对话问答" [ref=e16] [cursor=pointer]:
+        - /url: /chat
+        - img [ref=e18]
+        - generic [ref=e21]: 对话问答
+      - link "文档管理" [ref=e22] [cursor=pointer]:
+        - /url: /documents
+        - img [ref=e24]
+        - generic [ref=e26]: 文档管理
+      - link "知识库查询" [ref=e27] [cursor=pointer]:
+        - /url: /knowledge
+        - img [ref=e29]
+        - generic [ref=e32]: 知识库查询
+      - link "问答设置" [ref=e33] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e35]
+        - generic [ref=e37]: 问答设置
+    - main [ref=e38]:
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - generic [ref=e319]:
+            - img [ref=e322]
+            - textbox "按文件名或文档名搜索" [ref=e324]
+          - generic [ref=e327] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e329]
+              - generic [ref=e330]: 处理状态
+            - img [ref=e333]
+          - button "刷新" [ref=e335] [cursor=pointer]:
+            - img [ref=e337]
+            - generic [ref=e339]: 刷新
+          - button "上传文档" [ref=e341] [cursor=pointer]:
+            - button "上传文档" [ref=e342]:
+              - img [ref=e344]
+              - generic [ref=e346]: 上传文档
+        - generic [ref=e349]:
+          - table [ref=e351]:
+            - rowgroup [ref=e361]:
+              - row "文档名 文件名 类型 国家/地区 Chunks 状态 更新时间 操作" [ref=e362]:
+                - columnheader "文档名" [ref=e363]:
+                  - generic [ref=e364]: 文档名
+                - columnheader "文件名" [ref=e365]:
+                  - generic [ref=e366]: 文件名
+                - columnheader "类型" [ref=e367]:
+                  - generic [ref=e368]: 类型
+                - columnheader "国家/地区" [ref=e369]:
+                  - generic [ref=e370]: 国家/地区
+                - columnheader "Chunks" [ref=e371]:
+                  - generic [ref=e372]: Chunks
+                - columnheader "状态" [ref=e373]:
+                  - generic [ref=e374]: 状态
+                - columnheader "更新时间" [ref=e375]:
+                  - generic [ref=e376]: 更新时间
+                - columnheader "操作" [ref=e377]:
+                  - generic [ref=e378]: 操作
+          - table [ref=e383]:
+            - rowgroup [ref=e393]:
+              - row "“携带出境宠物检疫”功能模块操作手册-申报端 “携带出境宠物检疫”功能模块操作手册-申报端 operation_manual 3 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e394]:
+                - cell "“携带出境宠物检疫”功能模块操作手册-申报端" [ref=e395]:
+                  - generic [ref=e396]: “携带出境宠物检疫”功能模块操作手册-申报端
+                - cell "“携带出境宠物检疫”功能模块操作手册-申报端" [ref=e397]:
+                  - generic [ref=e398]: “携带出境宠物检疫”功能模块操作手册-申报端
+                - cell "operation_manual" [ref=e399]:
+                  - generic [ref=e400]: operation_manual
+                - cell [ref=e401]
+                - cell "3" [ref=e402]:
+                  - generic [ref=e403]: "3"
+                - cell "已就绪" [ref=e404]:
+                  - generic [ref=e407]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e408]:
+                  - generic [ref=e409]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e410]:
+                  - generic [ref=e411]:
+                    - button "详情" [ref=e412] [cursor=pointer]:
+                      - generic [ref=e413]: 详情
+                    - button "删除" [ref=e414] [cursor=pointer]:
+                      - generic [ref=e415]: 删除
+              - row "中华人民共和国携带宠物入境检疫要求 中华人民共和国携带宠物入境检疫要求.doc entry_regulation 6 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e416]:
+                - cell "中华人民共和国携带宠物入境检疫要求" [ref=e417]:
+                  - generic [ref=e418]: 中华人民共和国携带宠物入境检疫要求
+                - cell "中华人民共和国携带宠物入境检疫要求.doc" [ref=e419]:
+                  - generic [ref=e420]: 中华人民共和国携带宠物入境检疫要求.doc
+                - cell "entry_regulation" [ref=e421]:
+                  - generic [ref=e422]: entry_regulation
+                - cell [ref=e423]
+                - cell "6" [ref=e424]:
+                  - generic [ref=e425]: "6"
+                - cell "已就绪" [ref=e426]:
+                  - generic [ref=e429]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e430]:
+                  - generic [ref=e431]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e432]:
+                  - generic [ref=e433]:
+                    - button "详情" [ref=e434] [cursor=pointer]:
+                      - generic [ref=e435]: 详情
+                    - button "删除" [ref=e436] [cursor=pointer]:
+                      - generic [ref=e437]: 删除
+              - row "中华人民共和国海关进出境行李物品监管办法 中华人民共和国海关进出境行李物品监管办法.doc legal_text 7 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e438]:
+                - cell "中华人民共和国海关进出境行李物品监管办法" [ref=e439]:
+                  - generic [ref=e440]: 中华人民共和国海关进出境行李物品监管办法
+                - cell "中华人民共和国海关进出境行李物品监管办法.doc" [ref=e441]:
+                  - generic [ref=e442]: 中华人民共和国海关进出境行李物品监管办法.doc
+                - cell "legal_text" [ref=e443]:
+                  - generic [ref=e444]: legal_text
+                - cell [ref=e445]
+                - cell "7" [ref=e446]:
+                  - generic [ref=e447]: "7"
+                - cell "已就绪" [ref=e448]:
+                  - generic [ref=e451]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e452]:
+                  - generic [ref=e453]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e454]:
+                  - generic [ref=e455]:
+                    - button "详情" [ref=e456] [cursor=pointer]:
+                      - generic [ref=e457]: 详情
+                    - button "删除" [ref=e458] [cursor=pointer]:
+                      - generic [ref=e459]: 删除
+              - row "具备进境宠物隔离检疫条件的口岸名单 具备进境宠物隔离检疫条件的口岸名单.doc reference_list 9 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e460]:
+                - cell "具备进境宠物隔离检疫条件的口岸名单" [ref=e461]:
+                  - generic [ref=e462]: 具备进境宠物隔离检疫条件的口岸名单
+                - cell "具备进境宠物隔离检疫条件的口岸名单.doc" [ref=e463]:
+                  - generic [ref=e464]: 具备进境宠物隔离检疫条件的口岸名单.doc
+                - cell "reference_list" [ref=e465]:
+                  - generic [ref=e466]: reference_list
+                - cell [ref=e467]
+                - cell "9" [ref=e468]:
+                  - generic [ref=e469]: "9"
+                - cell "已就绪" [ref=e470]:
+                  - generic [ref=e473]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e474]:
+                  - generic [ref=e475]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e476]:
+                  - generic [ref=e477]:
+                    - button "详情" [ref=e478] [cursor=pointer]:
+                      - generic [ref=e479]: 详情
+                    - button "删除" [ref=e480] [cursor=pointer]:
+                      - generic [ref=e481]: 删除
+              - row "携带入境宠物（犬、猫）信息登记表 携带入境宠物（犬、猫）信息登记表.doc form_template 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e482]:
+                - cell "携带入境宠物（犬、猫）信息登记表" [ref=e483]:
+                  - generic [ref=e484]: 携带入境宠物（犬、猫）信息登记表
+                - cell "携带入境宠物（犬、猫）信息登记表.doc" [ref=e485]:
+                  - generic [ref=e486]: 携带入境宠物（犬、猫）信息登记表.doc
+                - cell "form_template" [ref=e487]:
+                  - generic [ref=e488]: form_template
+                - cell [ref=e489]
+                - cell "1" [ref=e490]:
+                  - generic [ref=e491]: "1"
+                - cell "已就绪" [ref=e492]:
+                  - generic [ref=e495]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e496]:
+                  - generic [ref=e497]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e498]:
+                  - generic [ref=e499]:
+                    - button "详情" [ref=e500] [cursor=pointer]:
+                      - generic [ref=e501]: 详情
+                    - button "删除" [ref=e502] [cursor=pointer]:
+                      - generic [ref=e503]: 删除
+              - row "海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告） 海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）.doc entry_regulation 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e504]:
+                - cell "海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）" [ref=e505]:
+                  - generic [ref=e506]: 海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）
+                - cell "海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）.doc" [ref=e507]:
+                  - generic [ref=e508]: 海关总署公告2019年第5号（关于进一步规范携带宠物入境检疫监管工作的公告）.doc
+                - cell "entry_regulation" [ref=e509]:
+                  - generic [ref=e510]: entry_regulation
+                - cell [ref=e511]
+                - cell "1" [ref=e512]:
+                  - generic [ref=e513]: "1"
+                - cell "已就绪" [ref=e514]:
+                  - generic [ref=e517]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e518]:
+                  - generic [ref=e519]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e520]:
+                  - generic [ref=e521]:
+                    - button "详情" [ref=e522] [cursor=pointer]:
+                      - generic [ref=e523]: 详情
+                    - button "删除" [ref=e524] [cursor=pointer]:
+                      - generic [ref=e525]: 删除
+              - row "海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告） 海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告）.docx reference_list 62 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e526]:
+                - cell "海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告）" [ref=e527]:
+                  - generic [ref=e528]: 海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告）
+                - cell "海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告）.docx" [ref=e529]:
+                  - generic [ref=e530]: 海关总署公告2019年第64号（关于更新携带入境宠物狂犬病抗体检测结果采信实验室名单的公告）.docx
+                - cell "reference_list" [ref=e531]:
+                  - generic [ref=e532]: reference_list
+                - cell [ref=e533]
+                - cell "62" [ref=e534]:
+                  - generic [ref=e535]: "62"
+                - cell "已就绪" [ref=e536]:
+                  - generic [ref=e539]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e540]:
+                  - generic [ref=e541]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e542]:
+                  - generic [ref=e543]:
+                    - button "详情" [ref=e544] [cursor=pointer]:
+                      - generic [ref=e545]: 详情
+                    - button "删除" [ref=e546] [cursor=pointer]:
+                      - generic [ref=e547]: 删除
+              - row "海关总署采信狂犬病抗体检测结果的实验室名单 海关总署采信狂犬病抗体检测结果的实验室名单.doc reference_list 9 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e548]:
+                - cell "海关总署采信狂犬病抗体检测结果的实验室名单" [ref=e549]:
+                  - generic [ref=e550]: 海关总署采信狂犬病抗体检测结果的实验室名单
+                - cell "海关总署采信狂犬病抗体检测结果的实验室名单.doc" [ref=e551]:
+                  - generic [ref=e552]: 海关总署采信狂犬病抗体检测结果的实验室名单.doc
+                - cell "reference_list" [ref=e553]:
+                  - generic [ref=e554]: reference_list
+                - cell [ref=e555]
+                - cell "9" [ref=e556]:
+                  - generic [ref=e557]: "9"
+                - cell "已就绪" [ref=e558]:
+                  - generic [ref=e561]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e562]:
+                  - generic [ref=e563]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e564]:
+                  - generic [ref=e565]:
+                    - button "详情" [ref=e566] [cursor=pointer]:
+                      - generic [ref=e567]: 详情
+                    - button "删除" [ref=e568] [cursor=pointer]:
+                      - generic [ref=e569]: 删除
+              - row "海关暂不予放行旅客行李物品暂存凭单 海关暂不予放行旅客行李物品暂存凭单.doc form_template 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e570]:
+                - cell "海关暂不予放行旅客行李物品暂存凭单" [ref=e571]:
+                  - generic [ref=e572]: 海关暂不予放行旅客行李物品暂存凭单
+                - cell "海关暂不予放行旅客行李物品暂存凭单.doc" [ref=e573]:
+                  - generic [ref=e574]: 海关暂不予放行旅客行李物品暂存凭单.doc
+                - cell "form_template" [ref=e575]:
+                  - generic [ref=e576]: form_template
+                - cell [ref=e577]
+                - cell "1" [ref=e578]:
+                  - generic [ref=e579]: "1"
+                - cell "已就绪" [ref=e580]:
+                  - generic [ref=e583]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e584]:
+                  - generic [ref=e585]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e586]:
+                  - generic [ref=e587]:
+                    - button "详情" [ref=e588] [cursor=pointer]:
+                      - generic [ref=e589]: 详情
+                    - button "删除" [ref=e590] [cursor=pointer]:
+                      - generic [ref=e591]: 删除
+              - row "赴日本犬猫检疫要求 赴日本犬猫检疫要求.docx country_export_req 日本 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e592]:
+                - cell "赴日本犬猫检疫要求" [ref=e593]:
+                  - generic [ref=e594]: 赴日本犬猫检疫要求
+                - cell "赴日本犬猫检疫要求.docx" [ref=e595]:
+                  - generic [ref=e596]: 赴日本犬猫检疫要求.docx
+                - cell "country_export_req" [ref=e597]:
+                  - generic [ref=e598]: country_export_req
+                - cell "日本" [ref=e599]:
+                  - generic [ref=e600]: 日本
+                - cell "1" [ref=e601]:
+                  - generic [ref=e602]: "1"
+                - cell "已就绪" [ref=e603]:
+                  - generic [ref=e606]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e607]:
+                  - generic [ref=e608]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e609]:
+                  - generic [ref=e610]:
+                    - button "详情" [ref=e611] [cursor=pointer]:
+                      - generic [ref=e612]: 详情
+                    - button "删除" [ref=e613] [cursor=pointer]:
+                      - generic [ref=e614]: 删除
+              - row "赴欧盟犬猫检疫要求 赴欧盟犬猫检疫要求.docx country_export_req 欧盟 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e615]:
+                - cell "赴欧盟犬猫检疫要求" [ref=e616]:
+                  - generic [ref=e617]: 赴欧盟犬猫检疫要求
+                - cell "赴欧盟犬猫检疫要求.docx" [ref=e618]:
+                  - generic [ref=e619]: 赴欧盟犬猫检疫要求.docx
+                - cell "country_export_req" [ref=e620]:
+                  - generic [ref=e621]: country_export_req
+                - cell "欧盟" [ref=e622]:
+                  - generic [ref=e623]: 欧盟
+                - cell "1" [ref=e624]:
+                  - generic [ref=e625]: "1"
+                - cell "已就绪" [ref=e626]:
+                  - generic [ref=e629]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e630]:
+                  - generic [ref=e631]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e632]:
+                  - generic [ref=e633]:
+                    - button "详情" [ref=e634] [cursor=pointer]:
+                      - generic [ref=e635]: 详情
+                    - button "删除" [ref=e636] [cursor=pointer]:
+                      - generic [ref=e637]: 删除
+              - row "赴美国犬检疫要求 赴美国犬检疫要求.docx country_export_req 美国 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e638]:
+                - cell "赴美国犬检疫要求" [ref=e639]:
+                  - generic [ref=e640]: 赴美国犬检疫要求
+                - cell "赴美国犬检疫要求.docx" [ref=e641]:
+                  - generic [ref=e642]: 赴美国犬检疫要求.docx
+                - cell "country_export_req" [ref=e643]:
+                  - generic [ref=e644]: country_export_req
+                - cell "美国" [ref=e645]:
+                  - generic [ref=e646]: 美国
+                - cell "1" [ref=e647]:
+                  - generic [ref=e648]: "1"
+                - cell "已就绪" [ref=e649]:
+                  - generic [ref=e652]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e653]:
+                  - generic [ref=e654]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e655]:
+                  - generic [ref=e656]:
+                    - button "详情" [ref=e657] [cursor=pointer]:
+                      - generic [ref=e658]: 详情
+                    - button "删除" [ref=e659] [cursor=pointer]:
+                      - generic [ref=e660]: 删除
+              - row "赴英国犬猫检疫要求 赴英国犬猫检疫要求.docx country_export_req 英国 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e661]:
+                - cell "赴英国犬猫检疫要求" [ref=e662]:
+                  - generic [ref=e663]: 赴英国犬猫检疫要求
+                - cell "赴英国犬猫检疫要求.docx" [ref=e664]:
+                  - generic [ref=e665]: 赴英国犬猫检疫要求.docx
+                - cell "country_export_req" [ref=e666]:
+                  - generic [ref=e667]: country_export_req
+                - cell "英国" [ref=e668]:
+                  - generic [ref=e669]: 英国
+                - cell "1" [ref=e670]:
+                  - generic [ref=e671]: "1"
+                - cell "已就绪" [ref=e672]:
+                  - generic [ref=e675]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e676]:
+                  - generic [ref=e677]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e678]:
+                  - generic [ref=e679]:
+                    - button "详情" [ref=e680] [cursor=pointer]:
+                      - generic [ref=e681]: 详情
+                    - button "删除" [ref=e682] [cursor=pointer]:
+                      - generic [ref=e683]: 删除
+              - row "进境宠物隔离场地名单 进境宠物隔离场地名单.xls reference_list 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e684]:
+                - cell "进境宠物隔离场地名单" [ref=e685]:
+                  - generic [ref=e686]: 进境宠物隔离场地名单
+                - cell "进境宠物隔离场地名单.xls" [ref=e687]:
+                  - generic [ref=e688]: 进境宠物隔离场地名单.xls
+                - cell "reference_list" [ref=e689]:
+                  - generic [ref=e690]: reference_list
+                - cell [ref=e691]
+                - cell "1" [ref=e692]:
+                  - generic [ref=e693]: "1"
+                - cell "已就绪" [ref=e694]:
+                  - generic [ref=e697]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e698]:
+                  - generic [ref=e699]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e700]:
+                  - generic [ref=e701]:
+                    - button "详情" [ref=e702] [cursor=pointer]:
+                      - generic [ref=e703]: 详情
+                    - button "删除" [ref=e704] [cursor=pointer]:
+                      - generic [ref=e705]: 删除
+        - dialog "文档处理详情" [ref=e707]:
+          - generic [ref=e708]:
+            - heading "文档处理详情" [level=2] [ref=e709]
+            - button "Close this dialog" [ref=e710] [cursor=pointer]:
+              - img [ref=e712]
+          - generic [ref=e714]:
+            - table [ref=e717]:
+              - rowgroup [ref=e718]:
+                - row "文档名 中华人民共和国携带宠物入境检疫要求" [ref=e719]:
+                  - cell "文档名" [ref=e720]
+                  - cell "中华人民共和国携带宠物入境检疫要求" [ref=e721]
+                - row "类型 entry_regulation" [ref=e722]:
+                  - cell "类型" [ref=e723]
+                  - cell "entry_regulation" [ref=e724]
+                - row "国家/地区" [ref=e725]:
+                  - cell "国家/地区" [ref=e726]
+                  - cell [ref=e727]
+                - row "状态 已就绪" [ref=e728]:
+                  - cell "状态" [ref=e729]
+                  - cell "已就绪" [ref=e730]:
+                    - generic [ref=e732]: 已就绪
+                - row "分块数 6" [ref=e733]:
+                  - cell "分块数" [ref=e734]
+                  - cell "6" [ref=e735]
+                - row "错误信息 无" [ref=e736]:
+                  - cell "错误信息" [ref=e737]
+                  - cell "无" [ref=e738]
+            - generic [ref=e739]:
+              - generic [ref=e740]: 转换文本预览
+              - paragraph [ref=e741]: 暂无预览

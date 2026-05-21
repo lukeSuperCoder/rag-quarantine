@@ -1,0 +1,88 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: 宠物检疫政策智能问答
+    - generic [ref=e6]:
+      - generic [ref=e8]: 后端可用
+      - button "健康检查" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - generic [ref=e13]: 健康检查
+  - generic [ref=e14]:
+    - complementary [ref=e15]:
+      - link "对话问答" [ref=e16] [cursor=pointer]:
+        - /url: /chat
+        - img [ref=e18]
+        - generic [ref=e21]: 对话问答
+      - link "文档管理" [ref=e22] [cursor=pointer]:
+        - /url: /documents
+        - img [ref=e24]
+        - generic [ref=e26]: 文档管理
+      - link "知识库查询" [ref=e27] [cursor=pointer]:
+        - /url: /knowledge
+        - img [ref=e29]
+        - generic [ref=e32]: 知识库查询
+      - link "问答设置" [ref=e33] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e35]
+        - generic [ref=e37]: 问答设置
+    - main [ref=e38]:
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - generic [ref=e319]:
+            - img [ref=e322]
+            - textbox "按文件名或文档名搜索" [active] [ref=e324]: 日本
+            - img [ref=e743] [cursor=pointer]
+          - generic [ref=e327] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e329]
+              - generic [ref=e330]: 处理状态
+            - img [ref=e333]
+          - button "刷新" [ref=e335] [cursor=pointer]:
+            - img [ref=e337]
+            - generic [ref=e339]: 刷新
+          - button "上传文档" [ref=e341] [cursor=pointer]:
+            - button "上传文档" [ref=e342]:
+              - img [ref=e344]
+              - generic [ref=e346]: 上传文档
+        - generic [ref=e349]:
+          - table [ref=e351]:
+            - rowgroup [ref=e361]:
+              - row "文档名 文件名 类型 国家/地区 Chunks 状态 更新时间 操作" [ref=e362]:
+                - columnheader "文档名" [ref=e363]:
+                  - generic [ref=e364]: 文档名
+                - columnheader "文件名" [ref=e365]:
+                  - generic [ref=e366]: 文件名
+                - columnheader "类型" [ref=e367]:
+                  - generic [ref=e368]: 类型
+                - columnheader "国家/地区" [ref=e369]:
+                  - generic [ref=e370]: 国家/地区
+                - columnheader "Chunks" [ref=e371]:
+                  - generic [ref=e372]: Chunks
+                - columnheader "状态" [ref=e373]:
+                  - generic [ref=e374]: 状态
+                - columnheader "更新时间" [ref=e375]:
+                  - generic [ref=e376]: 更新时间
+                - columnheader "操作" [ref=e377]:
+                  - generic [ref=e378]: 操作
+          - table [ref=e383]:
+            - rowgroup [ref=e393]:
+              - row "赴日本犬猫检疫要求 赴日本犬猫检疫要求.docx country_export_req 日本 1 已就绪 2026/5/21 20:41:34 详情 删除" [ref=e746]:
+                - cell "赴日本犬猫检疫要求" [ref=e747]:
+                  - generic [ref=e396]: 赴日本犬猫检疫要求
+                - cell "赴日本犬猫检疫要求.docx" [ref=e748]:
+                  - generic [ref=e398]: 赴日本犬猫检疫要求.docx
+                - cell "country_export_req" [ref=e749]:
+                  - generic [ref=e400]: country_export_req
+                - cell "日本" [ref=e750]:
+                  - generic [ref=e751]: 日本
+                - cell "1" [ref=e752]:
+                  - generic [ref=e403]: "1"
+                - cell "已就绪" [ref=e404]:
+                  - generic [ref=e407]: 已就绪
+                - cell "2026/5/21 20:41:34" [ref=e408]:
+                  - generic [ref=e409]: 2026/5/21 20:41:34
+                - cell "详情 删除" [ref=e410]:
+                  - generic [ref=e411]:
+                    - button "详情" [ref=e412] [cursor=pointer]:
+                      - generic [ref=e413]: 详情
+                    - button "删除" [ref=e414] [cursor=pointer]:
+                      - generic [ref=e415]: 删除
